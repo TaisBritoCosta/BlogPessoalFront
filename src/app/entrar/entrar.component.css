@@ -1,9 +1,33 @@
+.titulo {
+    font-family: Verdana;
+
+}
+
+.form-group {
+    margin: 14px;
+    font-family: verdana;
+    padding: 2px;
+
+}
+
+.cliente_novo{
+    font-family: Verdana;
+    font-size: 18px;
+    font: bold;
+
+}
+
+.btn {
+    margin: 14px;
+    padding: 6px 36px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #img-bg {
-background-image: url('../../assets/img/blog.jpg');
-
-
-min-height: 695px;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
+    background-image: url('../../assets/img/blog.jpg');
+    min-height: 695px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

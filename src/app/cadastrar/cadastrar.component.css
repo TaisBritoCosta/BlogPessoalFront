@@ -1,9 +1,20 @@
 #img-bg {
-    background-image: url('../../assets/img/gatinho.jfif');
-    
-    
-    min-height: 695px;
+    background-image: url('../../assets/img/gatonatureza.jpg');
+    min-height: 200px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    }
+}
+
+.form-group {
+    font-family: Verdana ;
+    margin: 4px;
+}
+
+.btn{
+    margin: 6px;
+
+
+}
+    
+    
