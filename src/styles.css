@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
+html{
+    scroll-behavior: smooth;  /* Quando rolar a  tela ao clicar , ele vai ser suave,de forma lenta */
+}
