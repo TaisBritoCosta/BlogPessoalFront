@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
+import { UsuarioLogin } from '../model/UsuarioLogin';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -10,20 +11,22 @@ import { AuthService } from '../service/auth.service';
 })
 export class CadastrarComponent implements OnInit {
 
-  usuario: Usuario = new Usuario()
+  usuarioLogin: UsuarioLogin = new UsuarioLogin()
+  usuario: Usuario = new Usuario
   confirmarSenha: string
   tipoUsuario: string
-  constructor(private authService: AuthService, private router: Router) { }
+
+  constructor(private authService: AuthService,
+     private router: Router) { }
 
   ngOnInit(){
     window.scroll(0,0) 
   }
+
   confirmSenha(event:any){
       this.confirmarSenha = event.target.value
   }
-  tipoUser(event: any) {
-    this.tipoUsuario = event.target.value
-  }
+ 
 
   cadastrar() {
     this.usuario.tipo = this.tipoUsuario;
@@ -33,9 +36,12 @@ export class CadastrarComponent implements OnInit {
     } else {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
-        this.router.navigate(['/entrar'])
+        this.router.navigate(['/logar'])
         alert('Usuário cadastrado com sucesso!')
       });
     }
   }
+  tipoUser(event: any){
+    this.tipoUsuario = event.target.value
+}
 }

@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'blogPessoalFront';
 
     constructor(
-      public auth: AuthService
+      public auth: AuthService  //injeção de depedência//
     ){}
 
 }

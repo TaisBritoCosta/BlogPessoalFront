@@ -3,3 +3,11 @@
 html{
     scroll-behavior: smooth;  /* Quando rolar a  tela ao clicar , ele vai ser suave,de forma lenta */
 }
+.fonte-1 {
+    font-size: 54pt;
+    margin: 10px;
+}
+
+.fonte-size {
+ font-size: 18pt;   
+}
