@@ -7,21 +7,22 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
 
+
 const routes: Routes = [
 
-  {path:'', redirectTo: 'logar', pathMatch: 'full'},
+  {path:'', redirectTo: 'entrar', pathMatch: 'full'},
 
-  {path:'logar', component: EntrarComponent},
+  {path:'entrar', component: EntrarComponent},
 
   {path:'cadastrar', component: CadastrarComponent},
 
   {path:'inicio', component: InicioComponent},
   
-  {path: 'tema', component: TemaComponent },
+  {path: 'temas', component: TemaComponent },
 
-  {path: 'tema-edit/:id', component: TemaEditComponent},
+  {path: 'temas-edit/:id', component: TemaEditComponent},
   
-  {path: 'tema-delete/:id', component: TemaDeleteComponent}
+  {path: 'temas-delete/:id', component: TemaDeleteComponent}
 
 ];
 
