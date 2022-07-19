@@ -21,6 +21,9 @@ export class AuthService {
     cadastrar(usuario: Usuario): Observable<Usuario>{
       return this.http.post<Usuario>('http://localhost:8080/usuarios/cadastrar', usuario)
     }
+    getByIdUser(id: number): Observable<Usuario>{
+      return this.http.get<Usuario>(`http://localhost:8080/usuarios/${id}`)
+    }
     logado(){   //Vai verificar se existe um token no environment, ele vai retornar true or false//
       let ok: boolean = false 
 

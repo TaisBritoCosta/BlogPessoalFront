@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
+import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
@@ -16,6 +17,7 @@ import { TemaService } from '../service/tema.service';
 export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
+  listaPostagens: Postagem[]
 
   tema: Tema = new Tema
   listaTemas: Tema[]
@@ -27,7 +29,8 @@ export class InicioComponent implements OnInit {
   constructor(
     private router: Router,
     private postagemService: PostagemService,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private authService: AuthService
     ) { }
   
 
@@ -37,20 +40,33 @@ export class InicioComponent implements OnInit {
     // alert('Sua seção expirou, faça o login novamente')//
     this.router.navigate(['/entrar'])
   }
-    this.getAllTemas
+    this.getAllTemas()
+    this.getAllPostagens()
 }
 
   getAllTemas(){
     this.temaService.getAllTema().subscribe((resp: Tema[])=>{
-    this.listaTemas
+    this.listaTemas = resp
   })
 }
 
   findByIdTema(){
     this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema)=>{
-      this.tema =resp
+      this.tema = resp
     })
   }
+
+  getAllPostagens(){
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[])=>{
+      this.listaPostagens = resp
+    })
+
+  }
+  findByIdUsuario(){
+  this.authService.getByIdUser(this.idUser).subscribe((resp: Usuario)=>{
+    this.user= resp
+  })
+}
   publicar(){
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
@@ -62,6 +78,7 @@ export class InicioComponent implements OnInit {
     this.postagem = resp
     alert('postagem realizada com sucesso!')
     this.postagem = new Postagem()
+    this.getAllPostagens()
     })
 
 
