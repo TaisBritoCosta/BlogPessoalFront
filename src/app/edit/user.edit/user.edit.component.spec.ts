@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostagemDeleteComponent } from './postagem-delete.component';
+import { User.EditComponent } from './user.edit.component';
 
-describe('PostagemDeleteComponent', () => {
-  let component: PostagemDeleteComponent;
-  let fixture: ComponentFixture<PostagemDeleteComponent>;
+describe('User.EditComponent', () => {
+  let component: User.EditComponent;
+  let fixture: ComponentFixture<User.EditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostagemDeleteComponent ]
+      declarations: [ User.EditComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PostagemDeleteComponent);
+    fixture = TestBed.createComponent(User.EditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
